@@ -1,10 +1,13 @@
 # JCameraView
+# 下载源码后运行cameraapplication这个model
 
  [![Download](https://api.bintray.com/packages/cjt/maven/cameraView/images/download.svg)](https://bintray.com//cjt/maven/cameraView/_latestVersion) [![API 14+](https://img.shields.io/badge/API-14%2B-green.svg)](https://github.com/CJT2325/CameraView)
 
 这是一个模仿微信拍照的Android开源控件
 
 - 点击拍照
+
+- 10s的视频大概1.9M左右
 
 - 长按录视频（视频长度可设置）
 
@@ -30,12 +33,10 @@
 
 **添加下列代码到 module gradle**
 
-> 最新版本（1.0.5）更新内容：
+> 最新版本（1.0.8）更新内容：
 ```gradle
-compile 'cjt.library.wheel:camera:1.0.5'
-//浏览界面能使用两根手指进行缩放
-//切换摄像头的按钮会根据手持手机方向进行旋转
-//修复内存泄露
+compile 'cjt.library.wheel:camera:1.0.8'
+//fix bug
 ```
 **如果获取依赖失败则添加下列代码到 project gradle**
 ```gradle
@@ -51,6 +52,11 @@ allprojects {
 
 ### 旧版本
 ```gradle
+compile 'cjt.library.wheel:camera:1.0.5'
+//浏览界面能使用两根手指进行缩放
+//切换摄像头的按钮会根据手持手机方向进行旋转
+//修复内存泄露
+
 compile 'cjt.library.wheel:camera:1.0.4'
 //换回VideoView
 //摄像上滑放大
@@ -181,12 +187,19 @@ protected void onPause() {
     mJCameraView.onPause();
 }
 ```
+
+### 感谢
+
+感谢 - [YanJingW](https://github.com/YanJingW) 修复首次录视频弹出获取录音权限Diglog导致Touch事件失效的BUG:relaxed:
+
 ### APK Demo
 扫码下载
 
 ![image](https://github.com/CJT2325/CameraView/blob/master/assets/QRcode.png)
 
 二维码显示不出请点击 [下载Demo](http://fir.im/8xnw)
+
+
 
 ### LICENSE
 Copyright 2017 CJT2325
